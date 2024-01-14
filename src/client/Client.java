@@ -3,6 +3,7 @@ package client;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.TimeUnit;
 
 public class Client {
 
@@ -12,8 +13,9 @@ public class Client {
 
             DataInputStream input = new DataInputStream(client.getInputStream());
             System.out.println(input.readUTF());
+            TimeUnit.SECONDS.sleep(30);
             client.close();
-        } catch (IOException ioe) {
+        } catch (IOException | InterruptedException ioe) {
             ioe.printStackTrace();
         }
     }
