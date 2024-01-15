@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Client {
 
     public static void main(String[] args) {
+        ClientGUI gui = new ClientGUI(ClientGUI.loginPanel());
         try {
             Socket client = new Socket("localhost", 4999);
 
