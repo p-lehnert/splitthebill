@@ -29,9 +29,6 @@ public class Server {
                 System.out.println("Waiting for clients at " + server.getLocalPort());
                 Socket client = server.accept();
                 clientList.add(client);
-                for(Socket c : clientList) {
-                    System.out.println(c.getRemoteSocketAddress());
-                }
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
                 output.writeUTF("Connection successful");
             } catch (IOException ioe) {

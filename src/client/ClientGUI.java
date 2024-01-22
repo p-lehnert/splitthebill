@@ -36,19 +36,15 @@ public class ClientGUI extends JFrame implements ActionListener {
         passwordField.setBounds(100, 50, 200, 25);
         JButton loginBtn = new JButton("Log in");
         loginBtn.setBounds(100, 80, 90, 25);
+        loginBtn.addActionListener(this);
         JButton register = new JButton("Sign up");
         register.setBounds(210, 80, 90, 25);
-        JLabel registerNote = new JLabel("Not signed up yet?");
-        registerNote.setBounds(210, 105, 90, 15);
-        registerNote.setFont(new Font(registerNote.getFont().getName(), Font.PLAIN, 10));
         loginPanel.add(usernameLbl);
         loginPanel.add(usernameArea);
         loginPanel.add(passwordLbl);
         loginPanel.add(passwordField);
         loginPanel.add(loginBtn);
         loginPanel.add(register);
-        loginPanel.add(registerNote);
-
 
         return loginPanel;
     }
@@ -62,9 +58,13 @@ public class ClientGUI extends JFrame implements ActionListener {
     }
 
     private void setPanel(JPanel panel) {
+        this.remove(panel);
+        this.panel = new JPanel();
         this.panel = panel;
-        this.getContentPane().removeAll();
-        this.getContentPane().add(panel);
+        this.add(panel);
+        this.revalidate();
+        this.setVisible(true);
+        System.out.println("Eigentlich sollte sich das Panel ändern. Hm.");
     }
 
     @Override
