@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="workspace und client changes">
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="login erste implementierung">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +85,8 @@
       <workItem from="1705170749163" duration="2537000" />
       <workItem from="1705242882568" duration="1973000" />
       <workItem from="1705306475597" duration="1851000" />
-      <workItem from="1705340080830" duration="1024000" />
+      <workItem from="1705340080830" duration="1743000" />
+      <workItem from="1705645587235" duration="2609000" />
     </task>
     <task id="LOCAL-00001" summary="erste server/client iplementierung">
       <created>1705173273809</created>
@@ -91,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705173273809</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="login erste implementierung">
+      <created>1705343498122</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705343498122</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,10 +118,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="erste server/client iplementierung" />
     <MESSAGE value="workspace und client changes" />
     <option name="LAST_COMMIT_MESSAGE" value="workspace und client changes" />
+    <MESSAGE value="login erste implementierung" />
+    <option name="LAST_COMMIT_MESSAGE" value="login erste implementierung" />
   </component>
 </project>

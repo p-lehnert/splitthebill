@@ -24,16 +24,30 @@ public class ClientGUI extends JFrame implements ActionListener {
 
     public JPanel loginPanel() {
         JPanel loginPanel = new JPanel();
-        loginPanel.setLayout(new GridLayout(2, 2));
-        JTextArea usernameArea = new JTextArea();
-        JTextArea passwordArea = new JTextArea();
+        loginPanel.setLayout(null);
+
+        JLabel usernameLbl = new JLabel("Username:");
+        usernameLbl.setBounds(10, 20, 80, 25);
+        JTextField usernameArea = new JTextField();
+        usernameArea.setBounds(100, 20, 200, 25);
+        JLabel passwordLbl = new JLabel("Password:");
+        passwordLbl.setBounds(10, 50, 80, 25);
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setBounds(100, 50, 200, 25);
         JButton loginBtn = new JButton("Log in");
-        loginBtn.addActionListener(this);
-        JButton register = new JButton("Register");
+        loginBtn.setBounds(100, 80, 90, 25);
+        JButton register = new JButton("Sign up");
+        register.setBounds(210, 80, 90, 25);
+        JLabel registerNote = new JLabel("Not signed up yet?");
+        registerNote.setBounds(210, 105, 90, 15);
+        registerNote.setFont(new Font(registerNote.getFont().getName(), Font.PLAIN, 10));
+        loginPanel.add(usernameLbl);
         loginPanel.add(usernameArea);
-        loginPanel.add(passwordArea);
+        loginPanel.add(passwordLbl);
+        loginPanel.add(passwordField);
         loginPanel.add(loginBtn);
         loginPanel.add(register);
+        loginPanel.add(registerNote);
 
 
         return loginPanel;
