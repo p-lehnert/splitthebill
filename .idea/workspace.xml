@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="erste server/client iplementierung">
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="workspace und client changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,10 +107,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="erste server/client iplementierung" />
-    <option name="LAST_COMMIT_MESSAGE" value="erste server/client iplementierung" />
+    <MESSAGE value="workspace und client changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace und client changes" />
   </component>
 </project>
