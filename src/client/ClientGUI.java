@@ -58,13 +58,13 @@ public class ClientGUI extends JFrame implements ActionListener {
     }
 
     private void setPanel(JPanel panel) {
-        this.remove(panel);
-        this.panel = new JPanel();
+        this.panel.removeAll();
         this.panel = panel;
-        this.add(panel);
+        this.panel.revalidate();
+        this.panel.repaint();
+        //this.add(panel);
         this.revalidate();
-        this.setVisible(true);
-        System.out.println("Eigentlich sollte sich das Panel ändern. Hm.");
+        //this.setVisible(true);
     }
 
     @Override
