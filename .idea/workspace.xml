@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="model ohne user">
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="panelchange vergeblich implementiert">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Balance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/model/Balance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/BillShareGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/model/BillShareGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/splitthebill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/splitthebill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +31,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="sqlite" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/home/patrick/SQLjars/sqlite-jdbc-3.31.1.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.Client" />
@@ -140,7 +137,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="erste server/client iplementierung" />

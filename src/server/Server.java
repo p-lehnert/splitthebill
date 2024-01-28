@@ -17,7 +17,11 @@ public class Server {
 
     public Server(final int port) {
         clientList = new ArrayList<>();
-        CreateDbs.createDatabases();
+        if (System.getProperty("os.name").contains("Windows")) {
+            CreateDbs.createDatabasesWin();
+        } else {
+            CreateDbs.createDatabasesLin();
+        }
         try {
             server = new ServerSocket(port);
             server.setSoTimeout(100000);
