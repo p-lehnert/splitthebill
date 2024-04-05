@@ -10,7 +10,8 @@ import java.sql.Statement;
 
 public class CreateDbs {
 
-    static String sqlCreateUserTable = "CREATE TABLE IF NOT EXISTS users (id integer PRIMARY KEY, username text NOT NULL, password text NOT NULL);";
+    static String sqlCreateUserTable = "CREATE TABLE IF NOT EXISTS users (id integer PRIMARY KEY, username text NOT NULL, password text NOT NULL);" +
+            "CREATE TABLE IF NOT EXISTS groups (id integer PRIMARY KEY, username text NOT NULL, password text NOT NULL)";
 
     static String pathLin = "/home/" + System.getProperty("user.name") + "/splitthebill";
 

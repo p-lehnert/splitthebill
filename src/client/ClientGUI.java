@@ -12,8 +12,22 @@ public class ClientGUI extends JFrame implements ActionListener {
 
     private JPanel panel;
 
+    JTextField usernameArea;
+
+    JPasswordField passwordField;
+
     public ClientGUI() {
         this.panel = loginPanel();
+        this.add(panel);
+        this.setPreferredSize(SCREEN_SIZE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }
+
+    public ClientGUI(int placeholder) {
+        this.panel = mainPanel();
         this.add(panel);
         this.setPreferredSize(SCREEN_SIZE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -28,11 +42,11 @@ public class ClientGUI extends JFrame implements ActionListener {
 
         JLabel usernameLbl = new JLabel("Username:");
         usernameLbl.setBounds(10, 20, 80, 25);
-        JTextField usernameArea = new JTextField();
+        usernameArea = new JTextField();
         usernameArea.setBounds(100, 20, 200, 25);
         JLabel passwordLbl = new JLabel("Password:");
         passwordLbl.setBounds(10, 50, 80, 25);
-        JPasswordField passwordField = new JPasswordField();
+        passwordField = new JPasswordField();
         passwordField.setBounds(100, 50, 200, 25);
         JButton loginBtn = new JButton("Log in");
         loginBtn.setBounds(100, 80, 90, 25);
@@ -57,18 +71,11 @@ public class ClientGUI extends JFrame implements ActionListener {
         return mainPanel;
     }
 
-    private void setPanel(JPanel panel) {
-        this.panel.removeAll();
-        this.panel = panel;
-        this.panel.revalidate();
-        this.panel.repaint();
-        //this.add(panel);
-        this.revalidate();
-        //this.setVisible(true);
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        setPanel(mainPanel());
+
+
+        new ClientGUI(1);
+        this.dispose();
     }
 }
