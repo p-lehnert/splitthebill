@@ -1,14 +1,10 @@
 package client;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ClientGUI extends JFrame implements ActionListener {
-
-    public static final Dimension SCREEN_SIZE =
-            new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width / 2, Toolkit.getDefaultToolkit().getScreenSize().height / 2);
+public class LoginGUI extends JFrame implements ActionListener {
 
     private JPanel panel;
 
@@ -16,20 +12,10 @@ public class ClientGUI extends JFrame implements ActionListener {
 
     JPasswordField passwordField;
 
-    public ClientGUI() {
+    public LoginGUI() {
         this.panel = loginPanel();
         this.add(panel);
-        this.setPreferredSize(SCREEN_SIZE);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
-    }
-
-    public ClientGUI(int placeholder) {
-        this.panel = mainPanel();
-        this.add(panel);
-        this.setPreferredSize(SCREEN_SIZE);
+        this.setPreferredSize(ClientConstants.SCREEN_SIZE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -63,19 +49,10 @@ public class ClientGUI extends JFrame implements ActionListener {
         return loginPanel;
     }
 
-    public JPanel mainPanel() {
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new FlowLayout());
-        JLabel label = new JLabel("-- In Arbeit --");
-        mainPanel.add(label);
-        return mainPanel;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
-
-        new ClientGUI(1);
+        new MainGUI();
         this.dispose();
     }
 }

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="model fertig und datenbank angefangen">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="gitignore und framewechsel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splitthebill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/splitthebill.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/MainGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DatabaseDriver/sqlite/sqlite-jdbc-3.31.1.jar" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -97,7 +95,8 @@
       <workItem from="1706623839067" duration="605000" />
       <workItem from="1710143383579" duration="1197000" />
       <workItem from="1712297347293" duration="294000" />
-      <workItem from="1712297689331" duration="3151000" />
+      <workItem from="1712297689331" duration="4617000" />
+      <workItem from="1712397127120" duration="537000" />
     </task>
     <task id="LOCAL-00001" summary="erste server/client iplementierung">
       <created>1705173273809</created>
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706343780131</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="gitignore und framewechsel">
+      <created>1712327722004</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712327722004</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +157,8 @@
     <MESSAGE value="login erste implementierung" />
     <MESSAGE value="clienthandler angefangen" />
     <MESSAGE value="model ohne user" />
-    <option name="LAST_COMMIT_MESSAGE" value="model ohne user" />
+    <MESSAGE value="gitignore und framewechsel" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore und framewechsel" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
