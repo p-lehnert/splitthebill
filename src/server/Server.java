@@ -13,7 +13,7 @@ public class Server {
 
     private ServerSocket server;
 
-    private List<Socket> clientList;
+    private final List<Socket> clientList;
 
     public Server(final int port) {
         clientList = new ArrayList<>();
@@ -31,18 +31,29 @@ public class Server {
     }
 
     public void runServer() {
-        while (true) {
-            try {
+        try {
+            while (!server.isClosed()) {
                 System.out.println("Waiting for clients at " + server.getLocalPort());
                 System.out.println(Constants.DATABASE_URL_WINDOWS);
                 Socket client = server.accept();
                 clientList.add(client);
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
                 output.writeUTF("Connection successful");
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-                break;
+                ClientHandler clientHandler = new ClientHandler(client);
+                Thread thread = new Thread(clientHandler);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeServerSocket() {
+        try {
+            if (server != null) {
+                server.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

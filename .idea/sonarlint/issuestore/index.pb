@@ -1,6 +1,4 @@
 
-I
-src/client/ClientGUI.java,b\c\bc2f40e1b9145ca01e4e88f7f03e7643bb49b361
 F
 src/client/Client.java,0\a\0a0f52bfa1f6460b3903514958536b4739b6a9a4
 :
