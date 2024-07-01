@@ -36,11 +36,10 @@ public class Server {
                 System.out.println("Waiting for clients at " + server.getLocalPort());
                 System.out.println(Constants.DATABASE_URL_WINDOWS);
                 Socket client = server.accept();
+                System.out.println("Client connected");
                 clientList.add(client);
-                DataOutputStream output = new DataOutputStream(client.getOutputStream());
-                output.writeUTF("Connection successful");
-                ClientHandler clientHandler = new ClientHandler(client);
-                Thread thread = new Thread(clientHandler);
+                Thread thread = new Thread(new ClientHandler(client));
+                thread.start();
             }
         } catch (IOException e) {
             e.printStackTrace();

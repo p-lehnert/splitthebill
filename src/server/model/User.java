@@ -2,7 +2,7 @@ package server.model;
 
 public class User {
 
-    private static int instances = 0;
+    private static int instances;
 
     private final int id;
 
