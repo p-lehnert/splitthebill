@@ -31,8 +31,24 @@ public class ClientHandler implements Runnable {
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
             } catch (IOException e) {
-                e.printStackTrace();
+                closeClientHandler();
             }
+        }
+    }
+
+    private void closeClientHandler() {
+        try {
+            if (bufferedReader != null) {
+                bufferedReader.close();
+            }
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+            if (client != null) {
+                client.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
