@@ -2,8 +2,12 @@ package client;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.concurrent.TimeUnit;
 
+/**
+ * Client-class
+ *
+ * This class is responsible for communicating with the server.
+ */
 public class Client {
 
     private Socket client;
@@ -12,6 +16,14 @@ public class Client {
 
     private BufferedWriter bufferedWriter;
 
+    /**
+     * Client constructor.
+     *
+     * Gets a socket and initialises the client, reader and writer.
+     * Prints out 'Connection successful', if everything works fine.
+     *
+     * @param client The given socket
+     */
     public Client (Socket client) {
         try {
             this.client = client;
@@ -23,6 +35,40 @@ public class Client {
         }
     }
 
+    /**
+     * Sends message to the server.
+     *
+     * @param message The message to be sent
+     */
+    public void sendMessage(String message) {
+        try {
+            bufferedWriter.write(message);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Receives server responses.
+     *
+     * !BLOCKING OPERATION!
+     */
+    public String receiveMessage() {
+        String receivedMessage;
+        try {
+            receivedMessage = bufferedReader.readLine();
+            return receivedMessage;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Close everything.
+     */
     private void closeClient() {
         try {
             if (bufferedReader != null) {
@@ -39,10 +85,15 @@ public class Client {
         }
     }
 
+    /**
+     * Main-method. Opens the GUI and establishes connection to the server.
+     *
+     * @param args Standard parameter for psvm.
+     */
     public static void main(String[] args) {
-        LoginGUI gui = new LoginGUI();
+        //LoginGUI gui = new LoginGUI(client);
         try {
-            new Client(new Socket("localhost", 4999));
+            new LoginGUI(new Client(new Socket("localhost", 4999)));
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }

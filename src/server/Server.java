@@ -2,7 +2,6 @@ package server;
 
 import server.persistence.CreateDbs;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,13 +16,13 @@ public class Server {
 
     public Server(final int port) {
         clientList = new ArrayList<>();
-        if (System.getProperty("os.name").contains("Windows")) {
-            CreateDbs.createDatabasesWin();
-        } else {
-            CreateDbs.createDatabasesLin();
-        }
         try {
             server = new ServerSocket(port);
+            if (System.getProperty("os.name").contains("Windows")) {
+                CreateDbs.createDatabasesWin();
+            } else {
+                CreateDbs.createDatabasesLin();
+            }
             server.setSoTimeout(100000);
         } catch (IOException ioe) {
             ioe.printStackTrace();

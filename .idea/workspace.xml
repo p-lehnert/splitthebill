@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="clienthandler und client">
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="main wieder raus, kleine änderungen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/LoginGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -35,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DatabaseDriver/sqlite/sqlite-jdbc-3.31.1.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/ToDoApp" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -74,8 +75,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +112,11 @@
       <workItem from="1719576779541" duration="510000" />
       <workItem from="1719582874119" duration="33000" />
       <workItem from="1719583837588" duration="604000" />
-      <workItem from="1719833667644" duration="7848000" />
+      <workItem from="1719833667644" duration="7885000" />
+      <workItem from="1719917634340" duration="10058000" />
+      <workItem from="1720017466434" duration="1329000" />
+      <workItem from="1720706194897" duration="882000" />
+      <workItem from="1720793693256" duration="1288000" />
     </task>
     <task id="LOCAL-00001" summary="erste server/client iplementierung">
       <created>1705173273809</created>
@@ -169,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719838520286</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="main wieder raus, kleine änderungen">
+      <created>1719846179616</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719846179616</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +209,8 @@
     <MESSAGE value="ein bisschen refactoring" />
     <MESSAGE value="bisschen clienthandler" />
     <MESSAGE value="clienthandler und client" />
-    <option name="LAST_COMMIT_MESSAGE" value="clienthandler und client" />
+    <MESSAGE value="main wieder raus, kleine änderungen" />
+    <option name="LAST_COMMIT_MESSAGE" value="main wieder raus, kleine änderungen" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

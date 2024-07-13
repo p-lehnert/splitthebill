@@ -3,8 +3,11 @@ package client;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class LoginGUI extends JFrame implements ActionListener {
+
+    private Client client;
 
     private JPanel panel;
 
@@ -12,7 +15,8 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     JPasswordField passwordField;
 
-    public LoginGUI() {
+    public LoginGUI(Client client) {
+        this.client = client;
         this.panel = loginPanel();
         this.add(panel);
         this.setPreferredSize(ClientConstants.SCREEN_SIZE);
@@ -51,6 +55,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        client.sendMessage("LOGIN::" + usernameArea.getText() +  "::" + Arrays.toString(passwordField.getPassword()));
 
         new MainGUI();
         this.dispose();
