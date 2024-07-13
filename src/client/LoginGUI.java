@@ -1,5 +1,8 @@
 package client;
 
+import server.Message;
+import server.MessageType;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +10,7 @@ import java.util.Arrays;
 
 public class LoginGUI extends JFrame implements ActionListener {
 
-    private Client client;
+    private final Client client;
 
     private JPanel panel;
 
@@ -55,7 +58,10 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        client.sendMessage("LOGIN::" + usernameArea.getText() +  "::" + Arrays.toString(passwordField.getPassword()));
+        Message loginMsg = new Message(MessageType.LOGIN_REQUEST);
+        loginMsg.setMessage(usernameArea.getText());
+        loginMsg.setSndMessage(String.valueOf(passwordField.getPassword()));
+        client.sendMessage(loginMsg);
 
         new MainGUI();
         this.dispose();

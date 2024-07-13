@@ -1,5 +1,7 @@
 package client;
 
+import server.Message;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -12,9 +14,9 @@ public class Client {
 
     private Socket client;
 
-    private BufferedReader bufferedReader;
+    private ObjectInputStream objectInputStream;
 
-    private BufferedWriter bufferedWriter;
+    private ObjectOutputStream objectOutputStream;
 
     /**
      * Client constructor.
@@ -27,9 +29,8 @@ public class Client {
     public Client (Socket client) {
         try {
             this.client = client;
-            this.bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
-            System.out.println(bufferedReader.readLine());
+            this.objectInputStream = new ObjectInputStream(client.getInputStream());
+            this.objectOutputStream = new ObjectOutputStream(client.getOutputStream());
         } catch (IOException e) {
             closeClient();
         }
@@ -40,11 +41,9 @@ public class Client {
      *
      * @param message The message to be sent
      */
-    public void sendMessage(String message) {
+    public void sendMessage(Message message) {
         try {
-            bufferedWriter.write(message);
-            bufferedWriter.newLine();
-            bufferedWriter.flush();
+            objectOutputStream.writeObject(message);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,14 +54,16 @@ public class Client {
      *
      * !BLOCKING OPERATION!
      */
-    public String receiveMessage() {
-        String receivedMessage;
+    public Message receiveMessage() {
+        Message receivedMessage;
         try {
-            receivedMessage = bufferedReader.readLine();
+            receivedMessage = (Message) objectInputStream.readObject();
             return receivedMessage;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -71,11 +72,11 @@ public class Client {
      */
     private void closeClient() {
         try {
-            if (bufferedReader != null) {
-                bufferedReader.close();
+            if (objectInputStream != null) {
+                objectInputStream.close();
             }
-            if (bufferedWriter != null) {
-                bufferedWriter.close();
+            if (objectOutputStream != null) {
+                objectOutputStream.close();
             }
             if (client != null) {
                 client.close();

@@ -1,3 +1,5 @@
+package server;
+
 public enum MessageType {
     // Clientside
     LOGIN_REQUEST,
