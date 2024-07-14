@@ -5,51 +5,68 @@ import server.model.User;
 import java.io.*;
 import java.net.Socket;
 
+/**
+ * Class for handling the Client-Server-communication.
+ */
 public class ClientHandler implements Runnable {
 
     private Socket client;
 
-    private BufferedReader bufferedReader;
+    private ObjectInputStream objectInputStream;
 
-    private BufferedWriter bufferedWriter;
+    private ObjectOutputStream objectOutputStream;
 
     private User user;
 
+    /**
+     * Constructor.
+     * Initializing client and streams.
+     *
+     * @param client The connected client
+     */
     ClientHandler(Socket client) {
         try {
             this.client = client;
-            this.bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
+            this.objectInputStream = new ObjectInputStream(client.getInputStream());
+            this.objectOutputStream = new ObjectOutputStream(client.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * "Main"-method for each thread.
+     * Confirms connection and waits for Message from client.
+     */
     @Override
     public void run() {
         try {
             if (client.isConnected()) {
                 // confirm connection
-                bufferedWriter.write("Connection successful");
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
+                objectOutputStream.writeObject(new Message(MessageType.CONN_SUCCESS));
+                objectOutputStream.flush();
             }
             while (client.isConnected()) {
                 // wait for user input
-                bufferedReader.readLine();
+                objectInputStream.readObject();
             }
         } catch (IOException e) {
             closeClientHandler();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
+    /**
+     * Closing-operation.
+     */
     private void closeClientHandler() {
         try {
-            if (bufferedReader != null) {
-                bufferedReader.close();
+            if (objectInputStream != null) {
+                objectInputStream.close();
             }
-            if (bufferedWriter != null) {
-                bufferedWriter.close();
+            if (objectOutputStream != null) {
+                objectOutputStream.close();
             }
             if (client != null) {
                 client.close();
@@ -59,11 +76,7 @@ public class ClientHandler implements Runnable {
         }
     }
 
-    public User getUser() {
-        return user;
-    }
+    public User getUser() {return user;}
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+    public void setUser(User user) {this.user = user;}
 }

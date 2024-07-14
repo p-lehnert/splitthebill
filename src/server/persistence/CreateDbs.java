@@ -22,7 +22,6 @@ public class CreateDbs {
     public static void createDatabasesLin() {
         directory = new File(pathLin);
         directory.mkdir();
-
         try (Connection conn = DriverManager.getConnection(Constants.DATABASE_URL_LINUX)) {
             Statement stmt = conn.createStatement();
             stmt.execute(sqlCreateUserTable);

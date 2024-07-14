@@ -5,6 +5,7 @@ public enum MessageType {
     LOGIN_REQUEST,
 
     // Serverside
+    CONN_SUCCESS,
     LOGIN_CONFIRM,
     LOGIN_ERROR
 }

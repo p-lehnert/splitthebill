@@ -7,7 +7,6 @@ import java.net.Socket;
 
 /**
  * Client-class
- *
  * This class is responsible for communicating with the server.
  */
 public class Client {
@@ -44,6 +43,8 @@ public class Client {
     public void sendMessage(Message message) {
         try {
             objectOutputStream.writeObject(message);
+            objectOutputStream.flush();
+            MessageHandlerClient.handleMessage(receiveMessage());
         } catch (IOException e) {
             e.printStackTrace();
         }

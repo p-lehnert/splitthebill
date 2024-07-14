@@ -33,7 +33,6 @@ public class Server {
         try {
             while (!server.isClosed()) {
                 System.out.println("Waiting for clients at " + server.getLocalPort());
-                System.out.println(Constants.DATABASE_URL_WINDOWS);
                 Socket client = server.accept();
                 System.out.println("Client connected");
                 clientList.add(client);
