@@ -20,7 +20,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../DatabaseDriver/sqlite/sqlite-jdbc-3.31.1.jar!/" />
+          <root url="jar://$USER_HOME$/DatabaseDriver/sqlite/sqlite-jdbc-3.31.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/SQLjars/sqlite-jdbc-3.31.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
