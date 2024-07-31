@@ -27,8 +27,8 @@ public class ClientHandler implements Runnable {
     ClientHandler(Socket client) {
         try {
             this.client = client;
-            this.objectInputStream = new ObjectInputStream(client.getInputStream());
             this.objectOutputStream = new ObjectOutputStream(client.getOutputStream());
+            this.objectInputStream = new ObjectInputStream(client.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }

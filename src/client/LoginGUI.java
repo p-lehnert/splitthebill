@@ -6,13 +6,12 @@ import server.MessageType;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class LoginGUI extends JFrame implements ActionListener {
 
     private final Client client;
 
-    private JPanel panel;
+    private final JPanel panel;
 
     JTextField usernameArea;
 
@@ -62,6 +61,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         loginMsg.setMessage(usernameArea.getText());
         loginMsg.setSndMessage(String.valueOf(passwordField.getPassword()));
         client.sendMessage(loginMsg);
+        client.getMessageHandler().handleMessage(client.receiveMessage());
 
         new MainGUI();
         this.dispose();

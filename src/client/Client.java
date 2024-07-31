@@ -17,6 +17,8 @@ public class Client {
 
     private ObjectOutputStream objectOutputStream;
 
+    private MessageHandlerClient messageHandler;
+
     /**
      * Client constructor.
      *
@@ -28,8 +30,10 @@ public class Client {
     public Client (Socket client) {
         try {
             this.client = client;
-            this.objectInputStream = new ObjectInputStream(client.getInputStream());
             this.objectOutputStream = new ObjectOutputStream(client.getOutputStream());
+            this.objectInputStream = new ObjectInputStream(client.getInputStream());
+            messageHandler = new MessageHandlerClient();
+            messageHandler.handleMessage(receiveMessage());
         } catch (IOException e) {
             closeClient();
         }
@@ -44,7 +48,7 @@ public class Client {
         try {
             objectOutputStream.writeObject(message);
             objectOutputStream.flush();
-            MessageHandlerClient.handleMessage(receiveMessage());
+            messageHandler.handleMessage(receiveMessage());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,13 +91,14 @@ public class Client {
         }
     }
 
+    public MessageHandlerClient getMessageHandler() {return messageHandler;}
+
     /**
      * Main-method. Opens the GUI and establishes connection to the server.
      *
      * @param args Standard parameter for psvm.
      */
     public static void main(String[] args) {
-        //LoginGUI gui = new LoginGUI(client);
         try {
             new LoginGUI(new Client(new Socket("localhost", 4999)));
         } catch (IOException ioe) {
