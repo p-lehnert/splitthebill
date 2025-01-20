@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="Kommunikation für Server angepasst; Message-handling begonnen">
+    <list default="true" id="7fcdf717-f278-4c6a-99e4-272baf8ab88d" name="Changes" comment="objectstrem-fix und bissl messagehandler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/LoginGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/MessageHandlerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/MessageHandlerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/MessageHandlerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/MessageHandlerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/persistence/CreateDbs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/patrick/SQLjars/sqlite-jdbc-3.31.1.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/patrick/projects/calculator&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -119,6 +122,12 @@
       <workItem from="1720793693256" duration="1288000" />
       <workItem from="1720950609671" duration="4600000" />
       <workItem from="1721044517735" duration="684000" />
+      <workItem from="1735473724442" duration="3720000" />
+      <workItem from="1735562493732" duration="2789000" />
+      <workItem from="1735649279249" duration="707000" />
+      <workItem from="1735745527951" duration="1708000" />
+      <workItem from="1736972097407" duration="17000" />
+      <workItem from="1737398962850" duration="2225000" />
     </task>
     <task id="LOCAL-00001" summary="erste server/client iplementierung">
       <created>1705173273809</created>
@@ -197,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720956219760</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="objectstrem-fix und bissl messagehandler">
+      <created>1722450379565</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722450379565</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +243,8 @@
     <MESSAGE value="main wieder raus, kleine änderungen" />
     <MESSAGE value="Kommunikation für Client angepasst" />
     <MESSAGE value="Kommunikation für Server angepasst; Message-handling begonnen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kommunikation für Server angepasst; Message-handling begonnen" />
+    <MESSAGE value="objectstrem-fix und bissl messagehandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="objectstrem-fix und bissl messagehandler" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

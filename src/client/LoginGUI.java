@@ -43,8 +43,9 @@ public class LoginGUI extends JFrame implements ActionListener {
         JButton loginBtn = new JButton("Log in");
         loginBtn.setBounds(100, 80, 90, 25);
         loginBtn.addActionListener(this);
-        JButton register = new JButton("Sign up");
+        JButton register = new JButton("Sign in");
         register.setBounds(210, 80, 90, 25);
+        register.addActionListener(this::signInButtonAction);
         loginPanel.add(usernameLbl);
         loginPanel.add(usernameArea);
         loginPanel.add(passwordLbl);
@@ -57,13 +58,18 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Message loginMsg = new Message(MessageType.LOGIN_REQUEST);
-        loginMsg.setMessage(usernameArea.getText());
-        loginMsg.setSndMessage(String.valueOf(passwordField.getPassword()));
-        client.sendMessage(loginMsg);
-        client.getMessageHandler().handleMessage(client.receiveMessage());
+        if (!usernameArea.getText().isEmpty() && passwordField.getPassword().length > 0) {
+            Message loginMsg = new Message(MessageType.LOGIN_REQUEST);
+            loginMsg.setMessage(usernameArea.getText());
+            loginMsg.setSndMessage(String.valueOf(passwordField.getPassword()));
+            client.sendMessage(loginMsg);
 
-        new MainGUI();
-        this.dispose();
+            new MainGUI();
+            this.dispose();
+        }
+    }
+
+    public void signInButtonAction(ActionEvent e) {
+        new SignInGUI(client);
     }
 }

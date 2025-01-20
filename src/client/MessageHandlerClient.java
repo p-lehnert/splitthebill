@@ -7,9 +7,17 @@ public class MessageHandlerClient {
 
     public void handleMessage(Message messageToHandle) {
         switch (messageToHandle.getMessageType()) {
-            case CONN_SUCCESS: System.out.println("Connection successful");
-            case LOGIN_CONFIRM: System.out.println("Login successful");
-            case LOGIN_ERROR: System.out.println("Login failed");
+            case CONN_SUCCESS:
+                System.out.println("Connection successful");
+                break;
+            case LOGIN_CONFIRM:
+                System.out.println("Login successful");
+                break;
+            case LOGIN_ERROR:
+                System.out.println("Login failed");
+                break;
+            case SIGNIN_ERROR_USERNAME:
+                System.out.println();
         }
     }
 }

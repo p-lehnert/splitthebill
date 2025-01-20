@@ -13,6 +13,8 @@ public class CreateDbs {
     static String sqlCreateUserTable = "CREATE TABLE IF NOT EXISTS users (id integer PRIMARY KEY, username text NOT NULL, password text NOT NULL);" +
             "CREATE TABLE IF NOT EXISTS groups (id integer PRIMARY KEY, username text NOT NULL, password text NOT NULL)";
 
+    static String sqlCreateAdmin = "INSERT INTO users (username, password) VALUES ('admin', 'admin')";
+
     static String pathLin = "/home/" + System.getProperty("user.name") + "/splitthebill";
 
     static String pathWin = "C:\\Users\\" + System.getProperty("user.name") + "\\Documents\\splithebill";

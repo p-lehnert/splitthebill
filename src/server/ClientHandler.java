@@ -48,7 +48,7 @@ public class ClientHandler implements Runnable {
             }
             while (client.isConnected()) {
                 // wait for user input
-                objectInputStream.readObject();
+                MessageHandlerServer.handleMessage((Message) objectInputStream.readObject());
             }
         } catch (IOException e) {
             closeClientHandler();

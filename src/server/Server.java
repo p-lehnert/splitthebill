@@ -23,7 +23,7 @@ public class Server {
             } else {
                 CreateDbs.createDatabasesLin();
             }
-            server.setSoTimeout(100000);
+            server.setSoTimeout(1000000);
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
